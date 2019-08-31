@@ -19,10 +19,10 @@ class Input
     // Método construtor
     public function __construct($type, $name, $required, $text)
     {
-        $this->$type     = $type;
-        $this->$name     = $name;
-        $this->$required = $required;
-        $this->$text     = $text;
+        $this->type     = $type;
+        $this->name     = $name;
+        $this->required = $required;
+        $this->text     = $text;
     }
 
 

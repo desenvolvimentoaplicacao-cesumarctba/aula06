@@ -19,9 +19,9 @@ class Formulario
     public function __construct($method, $action, $arrInput)
     { 
         // atribuições
-        $this->$method     = $method;
-        $this->$action     = $action;
-        $this->$arrinput   = $arrInput;
+        $this->method     = $method;
+        $this->action     = $action;
+        $this->arrinput   = $arrInput;
     }
 
 

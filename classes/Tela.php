@@ -11,14 +11,14 @@ class Tela
 
     // declaração de atributos
     public $title;
-    public $form;
+    public $form = null;
 
 
     // Método construtor
     public function __construct($title, $form)
     {
-        $this->$title  = $title;
-        $this->$form   = $form;
+        $this->title  = $title;
+        $this->form   = $form;
     }
 
     // mostrar (exibe a tela para o usuario)
