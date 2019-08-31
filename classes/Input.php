@@ -26,4 +26,12 @@ class Input
     }
 
 
+    // Criar um campo
+    public function criaCampo()
+    {
+       $str = "$this->text <input type='$this->type' name='$this->name'><br>";
+       return $str;    
+    }
+
+
 }

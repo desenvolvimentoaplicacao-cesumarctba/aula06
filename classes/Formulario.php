@@ -24,5 +24,23 @@ class Formulario
         $this->arrinput   = $arrInput;
     }
 
+    // metodo - cria formulario
+    public function criaForm()
+    {
+        $str = "<form method='$this->method' action='$this->action'>";
+
+        for ($i=0; $i < count($this->arrinput); $i++) { 
+            // gerar o campo criado dentro da string
+            $str .= $this->arrinput[$i]->criaCampo();
+        }
+
+        $str .= "</form>";
+
+        return $str; 
+
+
+    }
+
+
 
 }

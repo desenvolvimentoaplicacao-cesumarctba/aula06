@@ -12,21 +12,47 @@ class Tela
     // declaração de atributos
     public $title;
     public $form = null;
+    public $corDeFundo = "gray";
+    public $post;
 
 
     // Método construtor
-    public function __construct($title, $form)
+    public function __construct($title, $form, $post)
     {
         $this->title  = $title;
         $this->form   = $form;
+        $this->post   = $post;
     }
 
     // mostrar (exibe a tela para o usuario)
     public function mostrar()
     {
-        echo '<pre>';
-        print_r($this);
-        echo '</pre>';
+        $str = "<html>";
+        $str .= "        <head>";
+        $str .= "               <title>$this->title</title>";
+        $str .= "                <style>body {background-color: $this->corDeFundo;}</style>";
+        $str .= "        </head>";
+        $str .= "        <body>";
+        $str .= $this->form->criaForm();
+        $str .= "               <pre>";
+        $str .=         $this->recebePost();
+        $str .= "               </pre>";
+        $str .= "        </body>";
+        $str .= "</html>";
+
+        echo $str;
+    }
+
+
+    // recebe post
+    public function recebePost()
+    {
+        $str = "";
+        foreach ($this->post as $key => $value) {
+             $str .= "$key => $value <br>";
+        }
+
+        return $str; 
     }
 
 

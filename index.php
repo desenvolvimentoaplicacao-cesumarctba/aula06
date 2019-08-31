@@ -4,25 +4,28 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 
-
-
-
-
 // chamada das nossas classes 
 
 $arrInput   = [];
 
-$input1      = new \Pacote\Input("text", "meuInput1", true, "Input 1");
-$input2      = new \Pacote\Input("text", "meuInput2", true, "Input 2");
+$inpNome     = new \Pacote\Input("text",   "nome", true, "Nome:");
+$inpAltura   = new \Pacote\Input("text",   "altura", true, "Altura:");
+$inpPeso     = new \Pacote\Input("text",   "peso", true, "Peso:");
+$inpEmail     = new \Pacote\Input("email",  "email", true, "Email:");
+$inpSubmit   = new \Pacote\Input("submit", "enviar", true, "");
 
-$arrInput[] = [
-    $input1,
-    $input2
-];
+$arrInput[] = $inpNome;
+$arrInput[] = $inpAltura;
+$arrInput[] = $inpPeso;
+$arrInput[] = $inpEmail;
+$arrInput[] = $inpSubmit;
 
-$formulario = new \Pacote\Formulario('POST', '/teste.php', $arrInput);
 
-$tela       = new \Pacote\Tela('Minha Tela', $formulario);
+$formulario = new \Pacote\Formulario('POST', '/', $arrInput);
 
+$tela       = new \Pacote\Tela('Teste IMC', $formulario, $_POST);
+
+// $tela->corDeFundo = "red";
 $tela->mostrar();
+// $tela->recebePost($_POST);
 
